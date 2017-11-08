@@ -85,6 +85,21 @@ $(document).ready(function () {
         return ID;
     }
 
+    function cargarClasif(url) {
+        var nombreClasif = '';
+        $.ajax({
+            url: url,
+            method: 'GET',
+            async: false,
+            success: function (data) {
+                nombreClasif = data.classification;
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+        return nombreClasif;
+    }
 
     function cargarPersonas(url) {
 
@@ -96,6 +111,7 @@ $(document).ready(function () {
                 $('#personajes').empty();
                 var personajes = document.getElementById('personajes');
                 var especie = '';
+                var clasificacion = '';
                 var pelicula = '';
                 var tarjeta = '';
                 var cont = 1;
@@ -106,14 +122,15 @@ $(document).ready(function () {
 
                     for (var j = 0; j < data.results[i].species.length; j++) {
                         especie = cargarEspecie(data.results[i].species[j]);
-                        tarjeta += '   <td>' + especie + '</td>';
+                        clasificacion = cargarClasif(data.results[i].species[j]);
+                        tarjeta += '   <td>' + especie + ' / '+ clasificacion +'</td>';
                     }
 
                     tarjeta += '   <td>' + cargarPlaneta(data.results[i].homeworld) + '</td>';
                     tarjeta += '   <td>' + cargarIdioma(data.results[i].species) + '</td>';
                     tarjeta += '   <td>';
                     for (var j = 0; j < data.results[i].films.length; j++) {
-                        pelicula = 'Episodio ' + cargarID(data.results[i].films[j]) + ': ' + cargarPelicula(data.results[i].films[j]) + '. ';
+                        pelicula = 'Episodio ' + cargarID(data.results[i].films[j]) + ': ' + cargarPelicula(data.results[i].films[j]) + '.<br> ';
                         tarjeta += pelicula;
                     }
 
