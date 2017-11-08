@@ -15,16 +15,15 @@ $(document).ready(function () {
                 var tarjeta = '';
                 var cont = 1;
                 for (var i = 0; i < data.results.length; i++) {
-                    tarjeta += '<tr class="menu-tabla">'
-                    tarjeta += '  <th scope="row">' + cont++ + '</th>'
-                    tarjeta += '   <td>' + data.results[i].name + '</td>'
-                    tarjeta += '   <td>' + data.results[i].diameter + '</td>'
-                    tarjeta += '   <td>' + data.results[i].climate + '</td>'
-                    tarjeta += '   <td>' + data.results[i].terrain + '</td>'
-                    tarjeta += '   <td>' + data.results[i].surface_water + '</td>'
-                    tarjeta += '   <td>' + data.results[i].population + '</td>'
-                    tarjeta += ' </tr>'
-                    tarjeta += ' <tr>'
+                    tarjeta += '<tr class="menu-tabla">';
+                    tarjeta += '  <th scope="row">' + cont++ + '</th>';
+                    tarjeta += '   <td>' + data.results[i].name + '</td>';
+                    tarjeta += '   <td>' + data.results[i].diameter + '</td>';
+                    tarjeta += '   <td>' + data.results[i].climate + '</td>';
+                    tarjeta += '   <td>' + data.results[i].terrain + '</td>';
+                    tarjeta += '   <td>' + data.results[i].surface_water + '</td>';
+                    tarjeta += '   <td>' + data.results[i].population + '</td>';
+                    tarjeta += ' </tr>';
                 }
                 $('#planetas').html(tarjeta);
                 $('#next').on('click', function (e) {

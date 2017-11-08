@@ -15,16 +15,15 @@ $(document).ready(function () {
                 var tarjeta = '';
                 var cont = 1;
                 for (var i = 0; i < data.results.length; i++) {
-                    tarjeta += '<tr class="menu-tabla">'
-                    tarjeta += '  <th scope="row">' + cont++ + '</th>'
-                    tarjeta += '   <td>' + data.results[i].name + '</td>'
-                    tarjeta += '   <td>' + data.results[i].model + '</td>'
-                    tarjeta += '   <td>' + data.results[i].length + '</td>'
-                    tarjeta += '   <td>' + data.results[i].crew + '</td>'
-                    tarjeta += '   <td>' + data.results[i].passengers + '</td>'
-                    tarjeta += '   <td>' + data.results[i].vehicle_class + '</td>'
-                    tarjeta += ' </tr>'
-                    tarjeta += ' <tr>'
+                    tarjeta += '<tr class="menu-tabla">';
+                    tarjeta += '  <th scope="row">' + cont++ + '</th>';
+                    tarjeta += '   <td>' + data.results[i].name + '</td>';
+                    tarjeta += '   <td>' + data.results[i].model + '</td>';
+                    tarjeta += '   <td>' + data.results[i].length + '</td>';
+                    tarjeta += '   <td>' + data.results[i].crew + '</td>';
+                    tarjeta += '   <td>' + data.results[i].passengers + '</td>';
+                    tarjeta += '   <td>' + data.results[i].vehicle_class + '</td>';
+                    tarjeta += ' </tr>';
                 }
                 $('#vehiculos').html(tarjeta);
                 $('#next').on('click', function (e) {

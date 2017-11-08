@@ -119,7 +119,6 @@ $(document).ready(function () {
 
                     tarjeta += '   </td>';
                     tarjeta += ' </tr>';
-                    tarjeta += ' </tr>';
                 }
                 $('#personajes').html(tarjeta);
                 $('#next').on('click', function (e) {
